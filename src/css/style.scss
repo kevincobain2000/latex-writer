@@ -35,10 +35,17 @@ body {
 }
 a, a:visited {
     color: #6060d6;
+    text-decoration: none;;
+}
+a:hover{
+    text-decoration: underline;
 }
 .header-link {
     color: black !important;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+.hover-underline:hover {
+    text-decoration: underline;
 }
 h1.no-print {
     font-size: 1.5rem;
