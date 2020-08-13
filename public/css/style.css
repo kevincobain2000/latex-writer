@@ -196,8 +196,8 @@ table > tbody > tr:last-child > th {
   min-height: 80vh;
   padding-left: 90px;
   padding-right: 90px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background: white;
   border-radius: 5px;
 }

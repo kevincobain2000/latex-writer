@@ -77,7 +77,7 @@ function initEditor() {
 }
 
 function autoSave() {
-    if (typeof(Storage) !== "undefined") {
+    if (typeof(Storage) !== "undefined" && $("#autosave").length) {
         editor.setContent(window.localStorage.getItem('content'));
         editor.subscribe('editableInput', function (eventObj, editable) {
             window.localStorage.setItem('content', editor.getContent());
