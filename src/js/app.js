@@ -110,6 +110,10 @@ function initEditor() {
                 buttonText: "<small>",
                 htmlToInsert: "<small>small text</small>"
             }),
+            customHtmlCode: new CustomHtml({
+                buttonText: "<code>",
+                htmlToInsert: "<code>code text</code>"
+            }),
         },
         buttonLabels: 'fontawesome',
         toolbar: {
@@ -130,6 +134,7 @@ function initEditor() {
                 'customHtmlHr',
                 'customHtmlSup',
                 'customHtmlSmall',
+                'customHtmlCode',
                 'orderedlist',
                 'unorderedlist',
                 'colorPicker',
