@@ -1,0 +1,83 @@
+@import '~medium-editor/dist/css/medium-editor.min.css';
+@import '~medium-editor/src/sass/themes/beagle.scss';
+@import '~medium-editor-tables/dist/css/medium-editor-tables.min.css';
+
+body {
+    min-width: 120ch;
+}
+@media print {
+    .medium-editor-anchor-preview
+    .medium-editor-toolbar-anchor-preview,
+    .medium-editor-toolbar-actions,
+    .medium-editor-toolbar,
+    .medium-editor-stalker-toolbar,
+    .medium-toolbar-arrow-under,
+    .medium-editor-toolbar,
+    .static-toolbar,
+    .medium-editor-toolbar-active,
+    .no-print
+    {
+       display: none;  /* hide whole page */
+    }
+    .editable {
+        box-shadow: none !important;
+        font-size: 1.5rem;
+    }
+
+    .medium-editor-table, .medium-editor-table td{
+        border-left: none !important;
+        border-right: none !important;
+    }
+}
+.text-center {
+    text-align: center;
+}
+a, a:visited {
+    color: #6060d6;
+}
+h1.no-print {
+    font-size: 1.5rem;
+}
+.font-web {
+    font-family: sans-serif;
+}
+.text-sm {
+    font-size: 0.65rem;;
+}
+.text-md {
+    font-size: 0.85rem;;
+}
+.text-muted {
+    color:gray;
+}
+.text-black {
+    color: black;
+}
+
+table>tbody>tr:first-child>td, table>tbody>tr:first-child>th {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-weight: bold;;
+}
+table>tbody>tr:last-child>td, table>tbody>tr:last-child>th {
+    border-bottom: 2px solid black;
+}
+.medium-editor-table, .medium-editor-table td{
+    border: none;
+    border-left: 1px dotted black;
+    border-right: 1px dotted black;
+}
+.editable {
+    min-height: 80vh;
+    padding-left:90px;
+    padding-right:90px;
+    padding-top:10px;
+    padding-bottom:10px;
+    background: white;
+    border-radius: 5px;
+}
+
+.editable.medium-editor-element:focus {
+    outline: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
