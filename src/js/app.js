@@ -12,6 +12,7 @@ $(document).ready(function () {
         if (ok) {
             window.localStorage.setItem("index", '')
             window.localStorage.setItem("latex", '')
+            window.localStorage.setItem("resume-flat", '')
             location.reload();
         }
     })
@@ -89,7 +90,7 @@ function initEditor() {
         paste: {
             forcePlainText: false,
             cleanPastedHTML: false,
-            // cleanReplacements: [],
+            cleanReplacements: [],
             // cleanAttrs: ['class', 'style', 'dir'],
             // cleanTags: ['meta']
         },
