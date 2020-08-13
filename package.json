@@ -7,9 +7,10 @@
     "css": "node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "css-prod": " cross-env NODE_ENV=production npm run css",
     "watch-css": "npm run css -- --watch"
-  }, 
+  },
   "dependencies": {
     "cross-env": "^7.0.2",
+    "file-saver": "^2.0.2",
     "jquery": "^3.5.1",
     "laravel-mix": "^5.0.4",
     "latex.css": "^1.2.0",

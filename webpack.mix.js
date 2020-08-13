@@ -21,8 +21,10 @@ mix
     './node_modules/medium-editor-custom-html/src/custom-html.min.js',
     './node_modules/medium-editor-tables/dist/js/medium-editor-tables.min.js',
     './node_modules/medium-editor-autolist/dist/autolist.min.js',
+    './node_modules/file-saver/dist/FileSaver.js',
     // './node_modules/mathjax/es5/tex-mml-chtml.js',
     './src/js/vanilla-color-picker.js',
+    './src/js/jquery.wordexport.js',
     './src/js/app.js',
   ], 'public/js/app.js')
   .sourceMaps()

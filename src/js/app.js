@@ -9,12 +9,15 @@ $(document).ready(function () {
     autoSave()
     $("#clear-storage").click(function(){
         var ok = confirm('Are you sure?');
-        console.log('ok :', ok);
         if (ok) {
             window.localStorage.setItem("index", '')
             window.localStorage.setItem("latex", '')
         }
     })
+    $("#word-export").click(function(event) {
+        console.log("er")
+        $(".editable").wordExport();
+    });
 });
 
 
