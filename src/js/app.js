@@ -86,6 +86,13 @@ var ColorPickerExtension = MediumEditor.Extension.extend({
 });
 function initEditor() {
     return new MediumEditor('.editable', {
+        paste: {
+            forcePlainText: false,
+            cleanPastedHTML: false,
+            // cleanReplacements: [],
+            // cleanAttrs: ['class', 'style', 'dir'],
+            // cleanTags: ['meta']
+        },
         extensions: {
             // autolist: autolist, // init it after loading from localstorage to avoid range error
             table: new MediumEditorTable(),
