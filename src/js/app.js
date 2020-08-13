@@ -65,10 +65,17 @@ function initEditor() {
 }
 
 function autoSave() {
-    if (typeof(Storage) !== "undefined" && $("#autosave").length) {
-        editor.setContent(window.localStorage.getItem('content'));
+    if (typeof(Storage) !== "undefined") {
+        var key = $(".editable").attr("id")
+        console.log('key :', key);
+        var cached = window.localStorage.getItem(key)
+        console.log('cached :', cached);
+        if (cached) {
+            editor.setContent(cached);
+        }
+
         editor.subscribe('editableInput', function (eventObj, editable) {
-            window.localStorage.setItem('content', editor.getContent());
+            window.localStorage.setItem(key, editor.getContent());
         });
         editor.extensions.autolist = new AutoList()
     }

@@ -14,39 +14,38 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="no-print">
-            <span class="latex">L<span>a</span>T<span>e</span>X</span> Writer
-        </h1>
-        <div class="no-print font-web">
-            <p class="text-center">
-                <a class="text-md" href="https://github.com/kevincobain2000/latex-writer">
-                    <i class="fa fa-code"></i>
-                    Github
+        <div class="no-print">
+            <h1>
+                <a href="./index.html" class="header-link">
+                    <span class="latex">L<span>a</span>T<span>e</span>X</span> Writer
                 </a>
-                <br>
-                <div class="text-sm text-center">
-
-                    <a href="https://github.com/kevincobain2000/latex-writer/issues">Feature Request</a>
-                    <span class="text-muted">|</span>
-
-                    <a href="./index.html">
-                        <strong>WRITER</strong>
+            </h1>
+            <div class="font-web">
+                <p class="text-center">
+                    <a class="text-md" href="https://github.com/kevincobain2000/latex-writer">
+                        <i class="fa fa-code"></i>
+                        Github
                     </a>
-                    <span class="text-muted">|</span>
-                    <a href="./latex.html">Template (Latex)</a>
                     <br>
-                    <br>
-                    <small class="text-sm">
-                        <strong class="text-black"> Cmd + P</strong> (Mac)
-                        or
-                        <strong class="text-black">Cltr + P</strong> (Windows)
-                    </small>
-                </div>
-            </p>
-            <br>
+                    <div class="text-sm text-center">
+                        <a href="./latex.html">Template (Latex)</a>
+                        <br>
+                        <br>
+                        <small class="text-muted text-sm">※ Auto saved in your browser.</small>
+                        <br>
+                        <small class="text-sm">
+                            <strong class="text-black"> Cmd + P</strong> (Mac)
+                            or
+                            <strong class="text-black">Cltr + P</strong> (Windows)
+                        </small>
+                    </div>
+                </p>
+                <hr>
+                <br>
+            </div>
         </div>
 
-        <div class="editable">
+        <div class="editable" id="latex">
             <h1><span class="latex">L<span>a</span>T<span>e</span>X</span>.css</h1>
             <p class="author">
               Vincent Dörig <br />
@@ -88,7 +87,6 @@
                 </ol>
               </li>
               <li><a href="#language-support">Language Support</a></li>
-              <li><a href="#sidenotes">Sidenotes</a></li>
               <li>
                 <a href="#html-elements">HTML Elements</a>
                 <ol>
@@ -207,63 +205,6 @@
               <p>
                 Take a peak at the <a href="/languages">language support demo</a> to
                 see how the labels of the different languages change.
-              </p>
-
-              <h2 id="sidenotes">Sidenotes</h2>
-              <p>
-                Sidenotes can be used as an alternative to footnotes, where the user does not
-                have to jump to the bottom of the page to read it. On mobile, click the
-                superscript to reveal the note<label for="sn-1" class="sidenote-toggle sidenote-number"></label><input
-                  type="checkbox" id="sn-1" class="sidenote-toggle" /><span class="sidenote">Yay, sidenotes!. If you are on
-                  mobile, I will appear inline. If you are
-                  using a larger screen, the sidenote will appear to the right of the
-                  text.</span>.
-              </p>
-
-              <p>
-                Sidenotes do need a little bit of setup, they are made up of a label, an
-                invisible checkbox on top of the number and a span with the text inside. The
-                superscript is audomatically defined and incremented using CSS when the
-                checkbox has a class of <code>sidenote-number</code>.
-              </p>
-              <pre><code>&lt;label for="sn-1" class="sidenote-toggle sidenote-number"&gt;&lt;/label&gt;
-        &lt;input type="checkbox" id="sn-1" class="sidenote-toggle" /&gt;
-        &lt;span class="sidenote"&gt;&lt;!-- sidenote content --&gt;&lt;/span&gt;</code></pre>
-              <p>If you do not need superscripted numbers, you can opt out of the <code>sidenote-number</code> class and the sidenote will not have a number assigned. On a smaller screen, you will need to add a symbol inside the <code>label</code> for the user to click on. <label for="sn-plus" class="sidenote-toggle">⊕</label><input type="checkbox"
-                  id="sn-plus" class="sidenote-toggle" /><span class="sidenote">This is a sidenote without a number.</span></p>
-              <p>The snippet for a sidenote without a number is very similar:</p>
-              <pre><code>&lt;label for="sn-anything" class="sidenote-toggle"&gt;⊕&lt;/label&gt;
-        &lt;input type="checkbox" id="sn-anything" class="sidenote-toggle" /&gt;
-        &lt;span class="sidenote"&gt;&lt;!-- sidenote content --&gt;&lt;/span&gt;</code></pre>
-              <!-- sidnotes as a link
-                  <label for="sn-plus" class="sidenote-toggle"><a
-                    href="#sn-plus-content">⊕</a></label><input type="checkbox" id="sn-plus" class="sidenote-toggle" /><span
-                  class="sidenote" id="sn-plus-content">This is a sidenote without a number.</span> -->
-              <p>Add a class of <code>left</code> to the span with the <code>sidenote</code> class to make the note appear on the left side of the page on instead of right.</p>
-              <p>The symbol you could use to indicate a sidenote is up to you. What about this notebook. <label for="sn-symbol"
-                  class="sidenote-toggle">📝</label><input type="checkbox" id="sn-symbol" class="sidenote-toggle" /><span
-                  class="sidenote left">A notebook indicating a note. Aha. <br> (if on a large screen, resize to mobile to see the emoji)</span></p>
-              <!-- <blockquote>You could also have sidenotes inside blockquotes just like this one <label for="sn-quote"
-                  class="sidenote-toggle">🔖</label><input type="checkbox" id="sn-quote" class="sidenote-toggle" /><span
-                  class="sidenote">Hello there!</span>.</blockquote> -->
-
-              <h2 id="html-elements">HTML Elements</h2>
-              <p>
-                For a preview of all HTML elements with LaTeX.css, check out the
-                <a href="/elements">HTML5 elements test page</a>.
-              </p>
-
-              <h3 id="text-formatting">Text Formatting</h3>
-              <p>
-                This sentence is <b>bold</b>. If you like semantics, you might go with
-                <strong>strong</strong> or <em>emphasized</em> text. If not,
-                <i>italic</i> is still around. <small>Small</small> text is for fine
-                print. Your copy can also be <sub>subscripted</sub> and
-                <sup>superscripted</sup>, <ins>inserted</ins>, <del>deleted</del>, or
-                <mark>highlighted</mark>. You would use a
-                <a href="#!">hyperlink</a> to go to a new page. Keyboard input
-                elements like <kbd>Cmd</kbd> + <kbd>Shift</kbd>
-                are used to display textual user input.
               </p>
 
               <h3 id="blockquotes">Blockquotes</h3>

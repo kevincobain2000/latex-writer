@@ -29,11 +29,16 @@ body {
         border-right: none !important;
     }
 }
+
 .text-center {
     text-align: center;
 }
 a, a:visited {
     color: #6060d6;
+}
+.header-link {
+    color: black !important;
+    text-decoration: none;
 }
 h1.no-print {
     font-size: 1.5rem;
