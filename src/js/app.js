@@ -12,10 +12,10 @@ $(document).ready(function () {
         if (ok) {
             window.localStorage.setItem("index", '')
             window.localStorage.setItem("latex", '')
+            location.reload();
         }
     })
     $("#word-export").click(function(event) {
-        console.log("er")
         $(".editable").wordExport();
     });
 });
