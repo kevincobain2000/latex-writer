@@ -13,6 +13,7 @@ $(document).ready(function () {
             window.localStorage.setItem("index", '')
             window.localStorage.setItem("latex", '')
             window.localStorage.setItem("resume-flat", '')
+            window.localStorage.setItem("resume-with-icons", '')
             location.reload();
         }
     })
