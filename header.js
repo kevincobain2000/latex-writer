@@ -31,6 +31,15 @@ document.write(`<h1 class="text-center">
                 or
                 <strong class="text-black">Cltr + P</strong> (Windows)
             </small>
+            <div id="modal-html" class="modal font-web">
+                <pre id="modal-html-pre"></pre>
+                <a href="#" rel="modal:close">Close</a>
+              </div>
+              <!-- Link to open the modal -->
+              <p class="text-center">
+                <a id="view-html" href="#modal-html" rel="modal:open">View HTML</a>
+              </p>
+            </div>
         </div>
     </p>
     <hr>

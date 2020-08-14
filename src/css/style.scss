@@ -1,6 +1,7 @@
 @import '~medium-editor/dist/css/medium-editor.min.css';
 @import '~medium-editor/src/sass/themes/beagle.scss';
 @import '~medium-editor-tables/dist/css/medium-editor-tables.min.css';
+@import '~jquery-modal/jquery.modal.min.css';
 
 body {
     min-width: 120ch;
@@ -66,6 +67,9 @@ h1.no-print {
 }
 .text-black {
     color: black;
+}
+.modal {
+    max-width: 50%;
 }
 
 table>tbody>tr:first-child>td, table>tbody>tr:first-child>th {

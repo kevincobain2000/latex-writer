@@ -4,6 +4,7 @@ MathJax = {
     },
 };
 var editor;
+var beautify_html = require('js-beautify').html;
 $(document).ready(function () {
     editor = initEditor()
     initActions()
@@ -20,11 +21,16 @@ function initActions() {
     $("#word-export").click(function(event) {
         $(".editable").wordExport();
     });
+    $("#view-html").click(function(){
+        var beautify_html = require('js-beautify').html;
+
+        result = beautify_html(editor.getContent());
+        $("#modal-html-pre").text(result)
+    })
 
     if (typeof(Storage) !== "undefined") {
         var key = $(".editable").attr("id")
         var cached = window.localStorage.getItem(key)
-        console.log(cached);
         if (cached) {
             editor.setContent(cached);
         }
