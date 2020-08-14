@@ -5,12 +5,13 @@
   "license": "MIT",
   "scripts": {
     "css": "cross-env node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "css-prod": "cross-env NODE_ENV=production npm run css",
-    "watch-css": "npm run css -- --watch"
+    "build": "cross-env NODE_ENV=production npm run css",
+    "watch": "npm run css -- --watch"
   },
   "dependencies": {
     "cross-env": "^7.0.2",
     "file-saver": "^2.0.2",
+    "filename-regex": "^2.0.1",
     "html2canvas": "^1.0.0-rc.7",
     "jquery": "^3.5.1",
     "jquery-modal": "^0.9.2",
@@ -22,6 +23,7 @@
     "medium-editor-autolist": "^1.0.1",
     "medium-editor-custom-html": "^1.1.0",
     "medium-editor-tables": "^0.6.1",
+    "mix-html-builder": "^0.6.1",
     "resolve-url-loader": "3.1.0",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",

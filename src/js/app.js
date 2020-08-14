@@ -1,10 +1,12 @@
-MathJax = {
+var editor;
+var beautifyHTML = require('js-beautify').html;
+
+var MathJax = {
     tex: {
       inlineMath: [['$', '$'],],
     },
 };
-var editor;
-var beautifyHTML = require('js-beautify').html;
+
 $(document).ready(function () {
     editor = initEditor()
     initActions()
@@ -16,7 +18,9 @@ function initActions() {
         if (!ok) {
             return
         }
-        window.localStorage.clear()
+        var path = window.location.pathname;
+        var key = path.split("/").pop().replace('.html', '');
+        window.localStorage.setItem(key, '')
         location.reload();
     })
     $("#pdf-export").click(function(event) {
@@ -37,7 +41,8 @@ function initActions() {
     })
 
     if (typeof(Storage) !== "undefined") {
-        var key = $(".editable").attr("id")
+        var path = window.location.pathname;
+        var key = path.split("/").pop().replace('.html', '');
         var cached = window.localStorage.getItem(key)
         if (cached) {
             editor.setContent(cached);

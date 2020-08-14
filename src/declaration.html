@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/latex.css/style.min.css" />
-    <link rel="stylesheet" href="./public/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="./public/js/lib.js"></script>
-    <script src="./public/js/app.js"></script>
-    <title>Latex Writer - Declaration template</title>
-    <meta name="description" content="Write documents with latex css in web browser">
-</head>
-<body>
-    <div class="container">
-        <div class="no-print">
-            <script src="./header.js"></script>
-        <div class="editable" id="declaration">
+<extends src="../layouts/layout.html">
+    <block name="head">
+        <title>
+            Latex Writer - Declaration letter template
+        </title>
+        <meta name="description" content="Declaration letter template">
+    </block>
+    <block name="editable-html">
+        <div class="editable">
             <h1 style="text-align: center; " class="">Declaration</h1>
             <p class="" style="text-align: center; ">John Doe<br>john.doe@apple.com</p>
             <p class="" style="text-align: left;"><b>To: </b>Whoever it may concern</p>
@@ -32,6 +21,5 @@
             <p style="text-align: right; "><span style="text-align: center;"><b>Phone: </b>214-689-6838<br></span></p>
             </p>
         </div>
-    </div>
-</body>
-</html>
+    </block>
+</extends>

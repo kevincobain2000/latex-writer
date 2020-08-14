@@ -1,20 +1,23 @@
 const mix = require('laravel-mix');
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+require('mix-html-builder');
 
 mix.disableNotifications();
-mix.setPublicPath('./public/')
+mix.setPublicPath('./docs/')
+
+
+
+mix.html({
+    htmlRoot: './src/*.html', // Your html root file(s)
+    output: './', // The html output folder
+    partialRoot: './src/partials',    // default partial path
+    layoutRoot: './src/layouts',    // default partial path
+    minify: {
+        removeComments: true
+    }
+});
 
 mix
-  .sass('./src/css/style.scss', 'public/css/style.css')
+  .sass('./src/css/style.scss', 'docs/css/style.css')
   .combine([
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/medium-editor/dist/js/medium-editor.min.js',
@@ -24,13 +27,13 @@ mix
     './node_modules/file-saver/dist/FileSaver.js',
     './node_modules/jquery-modal/jquery.modal.min.js',
     './node_modules/html2canvas/dist/html2canvas.min.js',
-    // './node_modules/mathjax/es5/tex-mml-chtml.js', //disable it for font base path
+    // './node_modules/mathjax/es5/tex-mml-chtml.js', //disable it for font base path.
     './src/js/vanilla-color-picker.js',
     './src/js/color-picker.js',
     './src/js/jquery.wordexport.js'
-  ],'public/js/lib.js')
+  ],'docs/js/lib.js')
   .js([
     './src/js/app.js',
-  ], 'public/js/app.js')
+  ], 'docs/js/app.js')
   .sourceMaps()
   .version();
