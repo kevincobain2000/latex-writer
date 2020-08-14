@@ -130,6 +130,7 @@ body {
 
   .editable {
     box-shadow: none !important;
+    border: none !important;
     font-size: 1.5rem;
   }
 
@@ -213,10 +214,14 @@ table > tbody > tr:last-child > th {
   padding-bottom: 50px;
   background: white;
   border-radius: 5px;
+  border: 1px solid #edcaca;
 }
 
 .editable.medium-editor-element:focus {
   outline: none;
+}
+
+.shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
