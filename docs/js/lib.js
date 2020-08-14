@@ -244,6 +244,7 @@ c.setAttribute("max","7"),c.className="medium-editor-toolbar-input",b.appendChil
   })(this || window);
 /**
  * Custom `color picker` extension
+ * Solution from: https://github.com/yabwe/medium-editor/issues/523#issuecomment-122942628
  */
 (function(global) {
     var ColorPickerExtension = MediumEditor.Extension.extend({
