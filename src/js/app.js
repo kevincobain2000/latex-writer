@@ -1,5 +1,6 @@
-var editor;
+var Editor;
 var beautifyHTML = require('js-beautify').html;
+var CacheKey = window.location.pathname.split("/").pop().replace('.html', '');
 
 var MathJax = {
     tex: {
@@ -8,19 +9,18 @@ var MathJax = {
 };
 
 $(document).ready(function () {
-    editor = initEditor()
-    initActions()
+    Editor = getEditor()
+    initClickActions()
+    initStorage()
 });
 
-function initActions() {
+function initClickActions() {
     $("#clear-storage").click(function(){
         var ok = confirm('Are you sure?');
         if (!ok) {
             return
         }
-        var path = window.location.pathname;
-        var key = path.split("/").pop().replace('.html', '');
-        window.localStorage.setItem(key, '')
+        window.localStorage.setItem(CacheKey, '')
         location.reload();
     })
     $("#pdf-export").click(function(event) {
@@ -36,26 +36,25 @@ function initActions() {
     });
 
     $("#view-html").click(function(){
-        result = beautifyHTML(editor.getContent());
+        result = beautifyHTML(Editor.getContent());
         $("#modal-html-pre").text(result)
     })
+}
+function initStorage() {
 
     if (typeof(Storage) !== "undefined") {
-        var path = window.location.pathname;
-        var key = path.split("/").pop().replace('.html', '');
-        var cached = window.localStorage.getItem(key)
+        var cached = window.localStorage.getItem(CacheKey)
         if (cached) {
-            editor.setContent(cached);
+            Editor.setContent(cached);
         }
 
-        editor.subscribe('editableInput', function (eventObj, editable) {
-            window.localStorage.setItem(key, editor.getContent());
+        Editor.subscribe('editableInput', function (eventObj, editable) {
+            window.localStorage.setItem(CacheKey, Editor.getContent());
         });
-        editor.extensions.autolist = new AutoList()
+        Editor.extensions.autolist = new AutoList()
     }
 }
-
-function initEditor() {
+function getEditor() {
     return new MediumEditor('.editable', {
         paste: {
             forcePlainText: false,
@@ -68,35 +67,43 @@ function initEditor() {
             // autolist: autolist, // init it after loading from localstorage to avoid range error
             table: new MediumEditorTable(),
             colorPicker: new ColorPickerExtension(),
-            customHtmlP: new CustomHtml({
-                buttonText: "<p>",
-                htmlToInsert: "<p>"
+            hr: new MediumButton({
+                label:'hr',
+                start:'<hr>',
+                end:'<br>'
             }),
-            customHtmlHr: new CustomHtml({
-                buttonText: "<hr>",
-                htmlToInsert: "<hr>"
+            pre: new MediumButton({
+                label:'pre',
+                start:'<pre>',
+                end:'</pre>'
             }),
-            customHtmlPre: new CustomHtml({
-                buttonText: "<pre>",
-                htmlToInsert: "<pre>"
+            sup: new MediumButton({
+                label:'<small>p</small><sup>sup</sup>',
+                start:'<sup>',
+                end:'</sup>'
             }),
-            customHtmlSup: new CustomHtml({
-                buttonText: "<sup>",
-                htmlToInsert: "<sup>1</sup>"
+            small: new MediumButton({
+                label:'<small>sm</small>',
+                start:'<small>',
+                end:'</small>'
             }),
-            customHtmlSmall: new CustomHtml({
-                buttonText: "<small>",
-                htmlToInsert: "<small>small text</small>"
+            code: new MediumButton({
+                label:'code',
+                start:'<code>',
+                end:'</code>'
             }),
-            customHtmlCode: new CustomHtml({
-                buttonText: "<code>",
-                htmlToInsert: "<code>code text</code>"
+            p: new MediumButton({
+                label:'P',
+                start:'<p>',
+                end:'</p>'
             }),
         },
         buttonLabels: 'fontawesome',
         toolbar: {
             buttons: [
-                'customHtmlP',
+                'p',
+                'sup',
+                'small',
                 'bold',
                 'italic',
                 'h1',
@@ -104,15 +111,13 @@ function initEditor() {
                 'h3',
                 'quote',
                 'anchor',
-                'customHtmlPre',
+                'pre',
+                'code',
                 'justifyLeft',
                 'justifyCenter',
                 'justifyRight',
                 'table',
-                'customHtmlHr',
-                'customHtmlSup',
-                'customHtmlSmall',
-                'customHtmlCode',
+                'hr',
                 'orderedlist',
                 'unorderedlist',
                 'colorPicker',

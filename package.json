@@ -19,6 +19,7 @@
     "laravel-mix": "^5.0.4",
     "latex.css": "^1.2.0",
     "mathjax": "^3.0.5",
+    "medium-button": "^1.1.4",
     "medium-editor": "^5.23.3",
     "medium-editor-autolist": "^1.0.1",
     "medium-editor-custom-html": "^1.1.0",
