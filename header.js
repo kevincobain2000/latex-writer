@@ -24,22 +24,17 @@ document.write(`<h1 class="text-center">
                 <a href="javascript:void(0);" id="clear-storage">Clear All</a>
             </small>
             <br>
-            <a href="javascript:void(0);" id="word-export">Export to Word</a>
-            or
-            <small class="text-sm">
-                <strong class="text-black"> Cmd + P</strong> (Mac)
-                or
-                <strong class="text-black">Cltr + P</strong> (Windows)
-            </small>
+            <b>Export to:</b>
+            <a href="javascript:void(0);" id="word-export">Word</a>,
+            <a href="javascript:void(0);" id="pdf-export">Pdf</a>,
             <div id="modal-html" class="modal font-web">
                 <pre id="modal-html-pre"></pre>
-                <a href="#" rel="modal:close">Close</a>
-              </div>
-              <!-- Link to open the modal -->
-              <p class="text-center">
-                <a id="view-html" href="#modal-html" rel="modal:open">View HTML</a>
-              </p>
             </div>
+            <a id="view-html" href="#modal-html" rel="modal:open">HTML</a>,
+            <div id="modal-png" class="modal font-web">
+                <div id="modal-png-div"></div>
+            </div>
+            <a id="view-png" href="#modal-png" rel="modal:open">PNG</a>
         </div>
     </p>
     <hr>

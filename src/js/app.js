@@ -4,7 +4,7 @@ MathJax = {
     },
 };
 var editor;
-var beautify_html = require('js-beautify').html;
+var beautifyHTML = require('js-beautify').html;
 $(document).ready(function () {
     editor = initEditor()
     initActions()
@@ -13,18 +13,26 @@ $(document).ready(function () {
 function initActions() {
     $("#clear-storage").click(function(){
         var ok = confirm('Are you sure?');
-        if (ok) {
-            window.localStorage.clear()
-            location.reload();
+        if (!ok) {
+            return
         }
+        window.localStorage.clear()
+        location.reload();
     })
+    $("#pdf-export").click(function(event) {
+        window.print()
+    });
     $("#word-export").click(function(event) {
         $(".editable").wordExport();
     });
-    $("#view-html").click(function(){
-        var beautify_html = require('js-beautify').html;
+    $("#view-png").click(function(event) {
+        html2canvas($('.editable')[0]).then(function(canvas) {
+            $('#modal-png-div').append(canvas);
+        });
+    });
 
-        result = beautify_html(editor.getContent());
+    $("#view-html").click(function(){
+        result = beautifyHTML(editor.getContent());
         $("#modal-html-pre").text(result)
     })
 

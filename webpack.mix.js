@@ -23,6 +23,7 @@ mix
     './node_modules/medium-editor-autolist/dist/autolist.min.js',
     './node_modules/file-saver/dist/FileSaver.js',
     './node_modules/jquery-modal/jquery.modal.min.js',
+    './node_modules/html2canvas/dist/html2canvas.min.js',
     // './node_modules/mathjax/es5/tex-mml-chtml.js', //disable it for font base path
     './src/js/vanilla-color-picker.js',
     './src/js/color-picker.js',

@@ -11,6 +11,7 @@
   "dependencies": {
     "cross-env": "^7.0.2",
     "file-saver": "^2.0.2",
+    "html2canvas": "^1.0.0-rc.7",
     "jquery": "^3.5.1",
     "jquery-modal": "^0.9.2",
     "js-beautify": "^1.12.0",
