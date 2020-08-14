@@ -24,6 +24,7 @@ mix
     './node_modules/file-saver/dist/FileSaver.js',
     // './node_modules/mathjax/es5/tex-mml-chtml.js',
     './src/js/vanilla-color-picker.js',
+    './src/js/color-picker.js',
     './src/js/jquery.wordexport.js',
     './src/js/app.js',
   ], 'public/js/app.js')
