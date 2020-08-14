@@ -18,8 +18,6 @@ document.write(`<h1 class="text-center">
             <a href="./latex.html">Latex</a>
             <span class="text-muted">|</span>
             <a href="./resume-flat.html">Resume Flat</a>
-            <span class="text-muted">|</span>
-            <a href="./resume-with-icons.html">Resume With Icons</a>
             <br>
             <br>
             <small class="text-muted text-sm">※ Auto saved in your browser.
