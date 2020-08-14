@@ -1,9 +1,10 @@
 document.write(`<h1 class="text-center">
-        <a href="./index.html" class="header-link">
-            <span class="latex">L<span>a</span>T<span>e</span>X</span>
-            <span class="hover-underline">Writer</span>
-        </a>
+        <span class="latex">L<span>a</span>T<span>e</span>X</span>
+        Writer
     </h1>
+    <p class="text-center">
+    Write beautiful HTML docs in LaTeX css.
+    </p>
 <div class="font-web">
     <p class="text-center">
         <a class="text-md" href="https://github.com/kevincobain2000/latex-writer">
@@ -18,6 +19,8 @@ document.write(`<h1 class="text-center">
             <a href="./latex.html">Latex</a>
             <span class="text-muted">|</span>
             <a href="./resume-flat.html">Resume Flat</a>
+            <span class="text-muted">|</span>
+            <a href="./declaration.html">Declaration</a>
             <br>
             <br>
             <small class="text-muted text-sm">※ Auto saved in your browser.
