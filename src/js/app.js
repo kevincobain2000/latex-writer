@@ -58,10 +58,10 @@ function getEditor() {
     return new MediumEditor('.editable', {
         paste: {
             forcePlainText: false,
-            cleanPastedHTML: false,
+            cleanPastedHTML: true,
             cleanReplacements: [],
-            // cleanAttrs: ['class', 'style', 'dir'],
-            // cleanTags: ['meta']
+            cleanAttrs: ['class', 'style', 'dir'], //when cleanPastedHTML is true
+            cleanTags: ['meta']
         },
         extensions: {
             // autolist: autolist, // init it after loading from localstorage to avoid range error
