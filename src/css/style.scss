@@ -105,13 +105,16 @@ table>tbody>tr:last-child>td, table>tbody>tr:last-child>th {
 @keyframes blink {
     0% { color: #6161f4; }
     100% { color: black; }
-  }
-  @-webkit-keyframes blink {
+}
+@-webkit-keyframes blink {
     0% { color: #6161f4; }
     100% { color: black; }
-  }
-  .blink {
+}
+.blink {
     -webkit-animation: blink 2s linear infinite;
     -moz-animation: blink 2s linear infinite;
     animation: blink 2s linear infinite;
-  }
+}
+.pl-1{
+    padding-left: 1;
+}

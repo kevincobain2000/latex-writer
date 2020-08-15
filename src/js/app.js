@@ -21,8 +21,8 @@ function initDictation() {
     recognition.continuous = true;
     recognition.onresult = function(event) {
         if (event.results.length > 0) {
-            var result = event.results[0][0].transcript;
-            Editor.setContent( '<span style="text-align:center;">'+result+'</span>' + Editor.getContent())
+            var result = event.results[event.results.length-1][0].transcript;
+            Editor.setContent( Editor.getContent() + '<span class="pl-1">'+result+'</span>')
         }
     }
     $("#mic").click(function(){
