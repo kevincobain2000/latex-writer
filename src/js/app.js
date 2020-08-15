@@ -12,7 +12,31 @@ $(document).ready(function () {
     Editor = getEditor()
     initClickActions()
     initStorage()
+    initDictation()
 });
+
+function initDictation() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.onresult = function(event) {
+        if (event.results.length > 0) {
+            var result = event.results[0][0].transcript;
+            Editor.setContent( '<span style="text-align:center;">'+result+'</span>' + Editor.getContent())
+        }
+    }
+    $("#mic").click(function(){
+        try {
+            $(this).removeClass("fa-microphone-slash")
+            $(this).addClass("fa-microphone blink")
+            recognition.start()
+        } catch (error) {
+            $(this).removeClass("fa-microphone blink")
+            $(this).addClass("fa-microphone-slash")
+            recognition.stop() //already started - toggle
+        }
+    })
+}
 
 function initClickActions() {
     $("#clear-storage").click(function(){
