@@ -17,11 +17,15 @@ $(document).ready(function () {
 
 function initDictation() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        return
+    }
     var recognition = new SpeechRecognition();
     recognition.continuous = true;
     recognition.onresult = function(event) {
         if (event.results.length > 0) {
-            var result = event.results[event.results.length-1][0].transcript;
+            var current = event.results[event.results.length-1][0]
+            var result = current.transcript;
             Editor.setContent( Editor.getContent() + '<span class="pl-1">'+result+'</span>')
         }
     }
