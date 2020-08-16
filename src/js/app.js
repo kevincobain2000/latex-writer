@@ -1,4 +1,5 @@
 var Editor;
+var Recognition
 var beautifyHTML = require('js-beautify').html;
 var CacheKey = window.location.pathname.split("/").pop().replace('.html', '');
 
@@ -23,28 +24,36 @@ function initSelectNav() {
      })
 }
 function initDictation() {
+    initMic()
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
         return
     }
-    var recognition = new SpeechRecognition();
-    recognition.continuous = true;
-    recognition.onresult = function(event) {
+    Recognition = new SpeechRecognition();
+    Recognition.continuous = true;
+    Recognition.onresult = function(event) {
         if (event.results.length > 0) {
             var current = event.results[event.results.length-1][0]
             var result = current.transcript;
             Editor.setContent( Editor.getContent() + '<span class="pl-1">'+result+'</span>')
         }
     }
+}
+
+function initMic() {
     $("#mic").click(function(){
+        if (!Recognition) {
+            alert("Only Chrome and Firefox are supported")
+            return
+        }
         try {
             $(this).removeClass("fa-microphone-slash")
             $(this).addClass("fa-microphone blink")
-            recognition.start()
+            Recognition.start()
         } catch (error) {
             $(this).removeClass("fa-microphone blink")
             $(this).addClass("fa-microphone-slash")
-            recognition.stop() //already started - toggle
+            Recognition.stop() //already started - toggle
         }
     })
 }
