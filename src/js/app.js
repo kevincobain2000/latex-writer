@@ -10,11 +10,18 @@ var MathJax = {
 
 $(document).ready(function () {
     Editor = getEditor()
+    initSelectNav()
     initClickActions()
     initStorage()
     initDictation()
 });
 
+function initSelectNav() {
+    let uri = window.location.pathname.split("/").pop()
+    $("#select-nav > option").each(function(){
+        if ($(this).val() == uri ) $(this).prop("selected", true);
+     })
+}
 function initDictation() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
