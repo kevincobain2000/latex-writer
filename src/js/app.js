@@ -62,7 +62,14 @@ function initClickActions() {
             $('#modal-png-div').append(canvas);
         });
     });
-
+    $("#png-export").click(function(event) {
+        html2canvas($('.editable')[0]).then(function(canvas) {
+            var link = document.createElement('a');
+            link.download = 'latex-writer.png';
+            link.href = canvas.toDataURL("image/png")
+            link.click();
+        });
+    });
     $("#view-html").click(function(){
         result = beautifyHTML(Editor.getContent());
         $("#modal-html-pre").text(result)

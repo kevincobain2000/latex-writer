@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "author": "Pulkit Kathuria <kevincobain2000@gmail.com>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "css": "cross-env node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build": "cross-env NODE_ENV=production npm run css",
@@ -26,7 +25,6 @@
     "medium-editor-custom-html": "^1.1.0",
     "medium-editor-tables": "^0.6.1",
     "mix-html-builder": "^0.6.1",
-    "purify-css": "^1.2.5",
     "resolve-url-loader": "3.1.0",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
