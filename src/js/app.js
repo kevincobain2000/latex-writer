@@ -14,7 +14,7 @@ $(document).ready(function () {
     initSelectNav()
     initClickActions()
     initStorage()
-    initDictation()
+    // initDictation()
 });
 
 function initSelectNav() {
