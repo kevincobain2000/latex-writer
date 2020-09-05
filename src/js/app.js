@@ -67,8 +67,9 @@ function initClickActions() {
         window.localStorage.setItem(CacheKey, '')
         location.reload();
     })
+
     $("#pdf-export").click(function(event) {
-        window.print()
+        $('.editable').printThis();
     });
     $("#word-export").click(function(event) {
         $(".editable").wordExport();
@@ -108,7 +109,7 @@ function initStorage() {
 function getEditor() {
     return new MediumEditor('.editable', {
         paste: {
-            forcePlainText: false,
+            forcePlainText: true,
             cleanPastedHTML: true,
             cleanReplacements: [],
             cleanAttrs: ['class', 'style', 'dir'], //when cleanPastedHTML is true
@@ -127,6 +128,11 @@ function getEditor() {
                 label:'pre',
                 start:'<pre>',
                 end:'</pre>'
+            }),
+            u: new MediumButton({
+                label:'u',
+                start:'<u>',
+                end:'</u>'
             }),
             sup: new MediumButton({
                 label:'<small>p</small><sup>sup</sup>',
@@ -153,6 +159,7 @@ function getEditor() {
         toolbar: {
             buttons: [
                 'p',
+                'u',
                 'sup',
                 'small',
                 'bold',

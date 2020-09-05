@@ -27,6 +27,7 @@ mix
     './node_modules/medium-editor-tables/dist/js/medium-editor-tables.min.js',
     './node_modules/medium-editor-autolist/dist/autolist.min.js',
     './node_modules/medium-button/dist/medium-button.min.js',
+    './node_modules/print-this/printThis.js',
     './src/js/vanilla-color-picker.js',
     './src/js/color-picker.js',
 
