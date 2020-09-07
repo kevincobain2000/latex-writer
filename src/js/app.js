@@ -69,7 +69,9 @@ function initClickActions() {
     })
 
     $("#pdf-export").click(function(event) {
-        $('.editable').printThis();
+        $('.editable').printThis({
+            loadCSS: "https://unpkg.com/latex.css/style.min.css",
+        });
     });
     $("#word-export").click(function(event) {
         $(".editable").wordExport();
