@@ -70,7 +70,6 @@ function initClickActions() {
 
     $("#pdf-export").click(function(event) {
         $('.editable').printThis({
-            importCSS: true,
             loadCSS: "https://unpkg.com/latex.css/style.min.css",
         });
     });
