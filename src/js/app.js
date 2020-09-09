@@ -72,7 +72,8 @@ function initClickActions() {
         $('.editable').printThis({
             importCSS: false,
             loadCSS: [
-                "/latex-writer/css/style.css",
+                // "/latex-writer/css/style.css",
+                // "/docs/css/style.css",
                 "https://unpkg.com/latex.css/style.min.css"
             ],
         });
